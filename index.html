@@ -162,6 +162,7 @@
             </div>
 
             <div class="flex flex-col items-center justify-center my-1 relative w-full">
+                <!-- 수정: 오른쪽 별에도 animate-bounce 추가 -->
                 <div class="absolute -top-1 right-4 text-themeRed text-xs animate-bounce">✦</div>
                 <h1 class="vintage-calligraphy-main">
                     Happy Birthday,
@@ -169,7 +170,7 @@
                 <div class="vintage-calligraphy-sub -mt-2">
                     Tan
                 </div>
-                <div class="absolute -bottom-1 left-4 text-themeRed text-xs">✦</div>
+                <div class="absolute -bottom-1 left-4 text-themeRed text-xs animate-bounce" style="animation-delay: 0.3s;">✦</div>
             </div>
 
             <p class="text-[10px] sm:text-[11px] text-stone-600 font-medium mt-1 font-serif italic px-2">
@@ -192,7 +193,6 @@
 
         <!-- GACHA MACHINE -->
         <div id="gachaMachine" class="w-full bg-[#F4EFE6] border-2 border-themeRed rounded-3xl p-2.5 shadow-md flex flex-col items-center mb-3 relative">
-            <!-- 수정: 좌우 균형을 완벽히 맞춘 타이틀 바 구조 (flex 양쪽 대칭 고정) -->
             <div class="w-full bg-themeRed rounded-t-xl py-1.5 px-3 flex items-center justify-between border-b border-[#F4EFE6]">
                 <div class="flex gap-1.5 w-12">
                     <div class="w-2 h-2 rounded-full bg-white opacity-80"></div>
@@ -400,7 +400,7 @@
         };
 
         window.initApp = function() {
-            const saved = localStorage.getItem('tan_bday_scrapbook_v8');
+            const saved = localStorage.getItem('tan_bday_scrapbook_v9');
             if (saved) { try { state = JSON.parse(saved); } catch (e) {} }
             renderUI();
 
@@ -417,7 +417,7 @@
         }
 
         window.saveApp = function() {
-            localStorage.setItem('tan_bday_scrapbook_v8', JSON.stringify(state));
+            localStorage.setItem('tan_bday_scrapbook_v9', JSON.stringify(state));
             renderUI();
         }
 
