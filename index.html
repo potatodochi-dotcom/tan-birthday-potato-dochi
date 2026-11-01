@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Happy Birthday, Tan - Capsule Gacha</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -35,7 +35,16 @@
         }
     </script>
     <style>
-        * { box-sizing: border-box; }
+        * { 
+            box-sizing: border-box; 
+        }
+        html, body {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden !important;
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: 'Pretendard', sans-serif;
             background-color: #EFE8DC;
@@ -44,13 +53,11 @@
                 linear-gradient(90deg, rgba(255, 255, 255, 0.2) 50%, transparent 50%);
             background-size: 24px 24px;
             min-height: 100vh;
-            margin: 0;
             padding: 16px 12px;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
-            overflow-x: hidden;
         }
 
         .scrapbook-card {
@@ -59,12 +66,14 @@
             box-shadow: 0 12px 35px rgba(160, 140, 120, 0.25);
             position: relative;
             z-index: 10;
+            width: 100%;
+            max-width: 420px;
         }
 
         .vintage-doily-ring {
             position: absolute;
-            width: 440px;
-            height: 440px;
+            width: 360px;
+            height: 360px;
             border-radius: 50%;
             border: 2px dashed rgba(201, 74, 56, 0.25);
             box-shadow: 0 0 30px rgba(255,255,255,0.6), inset 0 0 25px rgba(201,74,56,0.05);
@@ -75,7 +84,7 @@
         .vintage-calligraphy-main {
             font-family: 'Great Vibes', 'Sacramento', cursive;
             color: #C94A38;
-            font-size: 3.2rem;
+            font-size: 3rem;
             line-height: 1.1;
             text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.9), 3px 3px 6px rgba(201, 74, 56, 0.15);
             font-weight: normal;
@@ -84,7 +93,7 @@
         .vintage-calligraphy-sub {
             font-family: 'Great Vibes', 'Sacramento', cursive;
             color: #C94A38;
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             line-height: 1;
             text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.9), 3px 3px 6px rgba(201, 74, 56, 0.15);
             font-weight: normal;
@@ -122,27 +131,23 @@
 
     <div class="vintage-doily-ring"></div>
 
-    <div class="w-full max-w-md scrapbook-card rounded-[32px] p-5 sm:p-7 flex flex-col items-center my-auto overflow-visible relative">
+    <div class="scrapbook-card rounded-[32px] p-4 sm:p-7 flex flex-col items-center my-auto overflow-hidden relative">
         
-        <!-- 수정: copy right & collection 제거 및 @TAN_0122 단독 중앙 배치 -->
-        <div class="w-full flex items-center justify-center text-[11px] font-serif text-stone-600 border-b border-[#D8C5B2] pb-2 mb-4 tracking-wider">
+        <!-- 상단 헤더 바 -->
+        <div class="w-full flex items-center justify-center text-[11px] font-serif text-stone-600 border-b border-[#D8C5B2] pb-2 mb-3 tracking-wider">
             <span class="font-bold tracking-widest uppercase text-stone-700 text-[11px]">@TAN_0122</span>
         </div>
 
-        <!-- 데코 요소들 -->
-        <div class="absolute -top-7 -left-5 z-30 transform -rotate-12 pointer-events-none drop-shadow-md">
-            <div class="w-16 h-20 bg-[#F4EFE6] border-2 border-dashed border-[#D8C5B2] p-1 flex flex-col items-center justify-between relative shadow-sm">
-                <div class="text-[9px] font-mono text-stone-700 font-bold tracking-tighter">2027.01.22</div>
-                <div class="w-10 h-10 rounded-full bg-[#E8A598] flex items-center justify-center text-white text-xs font-black shadow-inner">TAN</div>
-                <div class="text-[8px] font-serif text-stone-600">SPECIAL</div>
-            </div>
-            <div class="absolute -top-3 left-4 w-4 h-10 border-2 border-slate-300 rounded-full bg-white/30 flex items-start justify-center pt-0.5">
-                <div class="w-3 h-3 rounded-full bg-slate-100 border border-slate-300 shadow-xs"></div>
+        <div class="absolute top-1 left-2 z-30 transform -rotate-12 pointer-events-none drop-shadow-md">
+            <div class="w-12 h-16 bg-[#F4EFE6] border border-dashed border-[#D8C5B2] p-1 flex flex-col items-center justify-between relative shadow-xs">
+                <div class="text-[8px] font-mono text-stone-700 font-bold tracking-tighter">01.22</div>
+                <div class="w-7 h-7 rounded-full bg-[#E8A598] flex items-center justify-center text-white text-[9px] font-black shadow-inner">TAN</div>
+                <div class="text-[7px] font-serif text-stone-600">SPECIAL</div>
             </div>
         </div>
 
-        <div class="absolute -top-6 -right-6 z-30 pointer-events-none drop-shadow-md transform rotate-12">
-            <svg width="54" height="46" viewBox="0 0 60 50">
+        <div class="absolute top-1 right-2 z-30 pointer-events-none drop-shadow-md transform rotate-12">
+            <svg width="40" height="35" viewBox="0 0 60 50">
                 <path d="M 30,22 Q 10,0 5,20 Q 20,30 30,25 Q 40,30 55,20 Q 50,0 30,22 Z" fill="#E8A598" stroke="#C94A38" stroke-width="2"/>
                 <circle cx="30" cy="23" r="5" fill="#C94A38"/>
                 <path d="M 27,26 Q 15,45 10,48 M 33,26 Q 45,45 50,48" stroke="#C94A38" stroke-width="3" stroke-linecap="round"/>
@@ -150,78 +155,78 @@
         </div>
 
         <!-- HEADER -->
-        <header class="w-full flex flex-col items-center text-center relative pt-1 pb-4">
-            <!-- 수정: 2027.01.22 BIRTHDAY -->
-            <div class="inline-flex items-center gap-2 bg-[#F4EFE6] border border-[#D8C5B2] rounded-full px-3 py-0.5 shadow-2xs mb-2">
+        <header class="w-full flex flex-col items-center text-center relative pt-2 pb-3">
+            <div class="inline-flex items-center gap-1.5 bg-[#F4EFE6] border border-[#D8C5B2] rounded-full px-2.5 py-0.5 shadow-2xs mb-2">
                 <span class="w-2 h-2 rounded-full bg-themeRed animate-pulse"></span>
-                <span class="text-[10px] font-black tracking-widest text-themeRed uppercase">2027.01.22 BIRTHDAY</span>
+                <span class="text-[9px] sm:text-[10px] font-black tracking-wider text-themeRed uppercase">2027.01.22 BIRTHDAY</span>
             </div>
 
             <div class="flex flex-col items-center justify-center my-1 relative w-full">
-                <div class="absolute -top-2 -right-2 text-themeRed text-xs animate-bounce">✦</div>
+                <div class="absolute -top-1 right-4 text-themeRed text-xs animate-bounce">✦</div>
                 <h1 class="vintage-calligraphy-main">
                     Happy Birthday,
                 </h1>
-                <div class="vintage-calligraphy-sub -mt-3">
+                <div class="vintage-calligraphy-sub -mt-2">
                     Tan
                 </div>
-                <div class="absolute -bottom-1 -left-2 text-themeRed text-xs">✦</div>
+                <div class="absolute -bottom-1 left-4 text-themeRed text-xs">✦</div>
             </div>
 
-            <!-- 수정: 영문 안내 문구 변경 -->
-            <p class="text-[11px] text-stone-600 font-medium mt-1 font-serif italic px-2">
+            <p class="text-[10px] sm:text-[11px] text-stone-600 font-medium mt-1 font-serif italic px-2">
                 "Leave a birthday wish for Tan, spin the gacha, and meet all 20+ characters today!"
             </p>
         </header>
 
         <!-- TICKET COUNTER -->
-        <div class="w-full bg-[#F4EFE6] border border-[#D8C5B2] rounded-2xl p-3 shadow-2xs flex items-center justify-between mb-4">
-            <div class="flex items-center gap-2.5">
+        <div class="w-full bg-[#F4EFE6] border border-[#D8C5B2] rounded-2xl p-2.5 shadow-2xs flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
                 <div class="w-8 h-8 bg-[#E8A598]/30 border border-[#D8C5B2] rounded-xl flex items-center justify-center text-themeRed shadow-inner">
-                    <i class="fa-solid fa-ticket text-sm"></i>
+                    <i class="fa-solid fa-ticket text-xs"></i>
                 </div>
                 <span class="font-bold text-stone-700 text-xs">보유 뽑기권</span>
             </div>
-            <div id="ticketCount" class="bg-themeRed text-white font-black text-sm px-3.5 py-1 rounded-xl shadow-2xs">
+            <div id="ticketCount" class="bg-themeRed text-white font-black text-xs px-3 py-1 rounded-xl shadow-2xs">
                 1개
             </div>
         </div>
 
         <!-- GACHA MACHINE -->
-        <div id="gachaMachine" class="w-full bg-[#F4EFE6] border-2 border-themeRed rounded-3xl p-3 shadow-md flex flex-col items-center mb-4 relative">
-            <!-- 수정: TANSYCAT LAB GACHA -> LUCKY -->
+        <div id="gachaMachine" class="w-full bg-[#F4EFE6] border-2 border-themeRed rounded-3xl p-2.5 shadow-md flex flex-col items-center mb-3 relative">
+            <!-- 수정: 좌우 균형을 완벽히 맞춘 타이틀 바 구조 (flex 양쪽 대칭 고정) -->
             <div class="w-full bg-themeRed rounded-t-xl py-1.5 px-3 flex items-center justify-between border-b border-[#F4EFE6]">
-                <div class="flex gap-1.5">
+                <div class="flex gap-1.5 w-12">
                     <div class="w-2 h-2 rounded-full bg-white opacity-80"></div>
                     <div class="w-2 h-2 rounded-full bg-white opacity-80"></div>
                     <div class="w-2 h-2 rounded-full bg-white opacity-80"></div>
                 </div>
-                <span class="text-[11px] font-black text-white tracking-widest font-mono">LUCKY</span>
-                <i class="fa-solid fa-star text-amber-200 text-xs"></i>
+                <span class="text-[11px] font-black text-white tracking-widest font-mono text-center flex-1">LUCKY</span>
+                <div class="w-12 flex justify-end">
+                    <i class="fa-solid fa-star text-amber-200 text-xs"></i>
+                </div>
             </div>
 
-            <div class="relative w-full h-48 bg-gradient-to-b from-[#EFE8DC] to-[#E4DCD0] border-2 border-[#D8C5B2] rounded-b-2xl overflow-hidden shadow-inner flex items-center justify-center my-2">
-                <div class="absolute top-2 left-4 w-3 h-28 bg-white opacity-40 rounded-full transform -rotate-12 pointer-events-none z-10"></div>
-                <div id="capsuleChamber" class="w-full h-full p-3 grid grid-cols-4 gap-2 items-end justify-items-center"></div>
+            <div class="relative w-full h-44 bg-gradient-to-b from-[#EFE8DC] to-[#E4DCD0] border-2 border-[#D8C5B2] rounded-b-2xl overflow-hidden shadow-inner flex items-center justify-center my-1.5">
+                <div class="absolute top-2 left-4 w-3 h-24 bg-white opacity-40 rounded-full transform -rotate-12 pointer-events-none z-10"></div>
+                <div id="capsuleChamber" class="w-full h-full p-2 grid grid-cols-4 gap-2 items-end justify-items-center"></div>
             </div>
 
-            <div class="w-full bg-[#EFE8DC] border-t-2 border-themeRed rounded-b-2xl p-2.5 flex flex-col items-center relative">
-                <div class="w-full bg-[#F4EFE6] border border-[#D8C5B2] rounded-xl p-2.5 flex items-center justify-around shadow-inner mb-2">
+            <div class="w-full bg-[#EFE8DC] border-t-2 border-themeRed rounded-b-2xl p-2 flex flex-col items-center relative">
+                <div class="w-full bg-[#F4EFE6] border border-[#D8C5B2] rounded-xl p-2 flex items-center justify-around shadow-inner mb-1.5">
                     <div class="flex flex-col items-center">
-                        <div class="w-1.5 h-6 bg-stone-500 rounded-full border border-stone-400"></div>
-                        <span class="text-[8px] font-black text-stone-400 mt-1">SLOT</span>
+                        <div class="w-1.5 h-5 bg-stone-500 rounded-full border border-stone-400"></div>
+                        <span class="text-[8px] font-black text-stone-400 mt-0.5">SLOT</span>
                     </div>
 
                     <div class="flex flex-col items-center cursor-pointer" onclick="drawCapsule()">
-                        <div id="turnDial" class="w-12 h-12 bg-[#F4EFE6] border-2 border-themeRed rounded-full shadow-sm flex items-center justify-center transition-transform active:scale-90">
-                            <div class="w-7 h-3 bg-themeRed rounded-full transform rotate-45"></div>
-                            <div class="absolute w-3 h-3 bg-amber-200 rounded-full"></div>
+                        <div id="turnDial" class="w-11 h-11 bg-[#F4EFE6] border-2 border-themeRed rounded-full shadow-xs flex items-center justify-center transition-transform active:scale-90">
+                            <div class="w-6 h-2.5 bg-themeRed rounded-full transform rotate-45"></div>
+                            <div class="absolute w-2.5 h-2.5 bg-amber-200 rounded-full"></div>
                         </div>
-                        <span class="text-[8px] font-black text-themeRed mt-1">TURN ↻</span>
+                        <span class="text-[8px] font-black text-themeRed mt-0.5">TURN ↻</span>
                     </div>
                 </div>
 
-                <div class="w-24 h-10 bg-stone-900 rounded-t-full border-2 border-stone-700 shadow-inner flex items-center justify-center relative overflow-hidden">
+                <div class="w-20 h-8 bg-stone-900 rounded-t-full border-2 border-stone-700 shadow-inner flex items-center justify-center relative overflow-hidden">
                     <div id="chuteExitArea" class="absolute bottom-1 z-20 hidden"></div>
                 </div>
             </div>
@@ -229,45 +234,45 @@
 
         <!-- DRAW BUTTON -->
         <button id="drawBtn" onclick="drawCapsule()" 
-            class="w-full py-3 bg-themeRed hover:bg-[#B53E2E] text-white font-black text-sm rounded-2xl shadow-sm border-b-3 border-[#9A3022] active:translate-y-0.5 active:border-b-0 transition-all flex items-center justify-center gap-2 mb-4">
+            class="w-full py-3 bg-themeRed hover:bg-[#B53E2E] text-white font-black text-sm rounded-2xl shadow-xs border-b-2 border-[#9A3022] active:translate-y-0.5 active:border-b-0 transition-all flex items-center justify-center gap-2 mb-3">
             <i class="fa-solid fa-gift"></i>
             <span>캡슐 뽑기 (1회 소모)</span>
         </button>
 
         <!-- COMMENT BOARD & COLLECTION SECTION -->
-        <div class="w-full bg-[#F4EFE6] border border-[#D8C5B2] rounded-2xl p-3.5 shadow-2xs space-y-3">
-            <form id="commentForm" onsubmit="handleCommentSubmit(event)" class="space-y-2">
-                <div class="flex gap-2">
+        <div class="w-full bg-[#F4EFE6] border border-[#D8C5B2] rounded-2xl p-3 shadow-2xs space-y-2.5">
+            <form id="commentForm" onsubmit="handleCommentSubmit(event)" class="space-y-1.5">
+                <div class="flex gap-1.5">
                     <input type="text" id="nickInput" required maxlength="8" placeholder="닉네임" 
-                        class="w-1/3 px-2.5 py-1.5 border border-[#D8C5B2] rounded-xl focus:outline-none focus:border-themeRed text-xs bg-white/70">
+                        class="w-1/3 px-2 py-1.5 border border-[#D8C5B2] rounded-xl focus:outline-none focus:border-themeRed text-[11px] bg-white/70">
                     <input type="text" id="msgInput" required maxlength="40" placeholder="탄님 축하 메시지!" 
-                        class="w-2/3 px-2.5 py-1.5 border border-[#D8C5B2] rounded-xl focus:outline-none focus:border-themeRed text-xs bg-white/70">
+                        class="w-2/3 px-2 py-1.5 border border-[#D8C5B2] rounded-xl focus:outline-none focus:border-themeRed text-[11px] bg-white/70">
                 </div>
                 <button type="submit" 
-                    class="w-full py-2 bg-themeRed hover:bg-[#B53E2E] text-white font-bold text-xs rounded-xl shadow-2xs transition-colors flex items-center justify-center gap-1.5">
-                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                    class="w-full py-1.5 bg-themeRed hover:bg-[#B53E2E] text-white font-bold text-xs rounded-xl shadow-2xs transition-colors flex items-center justify-center gap-1">
+                    <i class="fa-solid fa-paper-plane text-[10px]"></i>
                     <span>축하 메시지 남기고 뽑기권 +1 받기</span>
                 </button>
             </form>
 
-            <div class="border-t border-dashed border-[#D8C5B2] pt-2">
+            <div class="border-t border-dashed border-[#D8C5B2] pt-1.5">
                 <div class="flex justify-between items-center text-[10px] font-bold text-stone-500 mb-1">
                     <span>MESSAGES</span>
                     <span id="msgCount">총 0개</span>
                 </div>
-                <div id="messagesList" class="max-h-24 overflow-y-auto space-y-1 pr-1"></div>
+                <div id="messagesList" class="max-h-20 overflow-y-auto space-y-1 pr-1"></div>
             </div>
 
-            <div class="border-t border-dashed border-[#D8C5B2] pt-2">
-                <div class="flex justify-between items-center text-[11px] font-bold text-stone-700 mb-2">
+            <div class="border-t border-dashed border-[#D8C5B2] pt-1.5">
+                <div class="flex justify-between items-center text-[10px] font-bold text-stone-700 mb-1.5">
                     <span class="flex items-center gap-1 text-themeRed">
                         <i class="fa-solid fa-shapes"></i> SD 일러스트 도감 (20종)
                     </span>
-                    <span id="collectionStat" class="text-[10px] bg-[#E8A598]/30 text-stone-700 px-2 py-0.5 rounded-full font-bold">
+                    <span id="collectionStat" class="text-[9px] bg-[#E8A598]/30 text-stone-700 px-2 py-0.5 rounded-full font-bold">
                         0 / 20 수집됨
                     </span>
                 </div>
-                <div id="galleryGrid" class="grid grid-cols-4 gap-1.5 max-h-44 overflow-y-auto pr-1"></div>
+                <div id="galleryGrid" class="grid grid-cols-4 gap-1.5 max-h-40 overflow-y-auto pr-1"></div>
             </div>
         </div>
     </div>
@@ -276,21 +281,21 @@
     <div id="rewardModal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
         <div id="modalBox" class="relative w-full max-w-xs bg-[#F7F3EC] border-2 border-themeRed rounded-3xl p-5 shadow-2xl flex flex-col items-center transform transition-all scale-95 opacity-0">
             <div id="modalStepCapsule" class="flex flex-col items-center justify-center py-6">
-                <div class="w-24 h-24 rounded-full bg-gradient-to-br from-themeRed to-amber-200 border-4 border-white shadow-lg flex items-center justify-center capsule-drop-anim">
-                    <i class="fa-solid fa-gift text-white text-3xl animate-bounce"></i>
+                <div class="w-20 h-20 rounded-full bg-gradient-to-br from-themeRed to-amber-200 border-4 border-white shadow-lg flex items-center justify-center capsule-drop-anim">
+                    <i class="fa-solid fa-gift text-white text-2xl animate-bounce"></i>
                 </div>
-                <p class="text-xs font-bold text-themeRed mt-4 animate-pulse">✨ 캡슐이 빛나며 열리는 중...</p>
+                <p class="text-xs font-bold text-themeRed mt-3 animate-pulse">✨ 캡슐이 빛나며 열리는 중...</p>
             </div>
 
             <div id="modalStepContent" class="hidden flex flex-col items-center w-full">
                 <div id="modalGradeBadge" class="px-3 py-0.5 rounded-full font-black text-xs text-white shadow-xs mb-2">GRADE</div>
-                <div class="w-32 h-32 bg-[#F4EFE6] border border-[#D8C5B2] rounded-2xl shadow-inner flex items-center justify-center p-2 mb-2">
+                <div class="w-28 h-28 bg-[#F4EFE6] border border-[#D8C5B2] rounded-2xl shadow-inner flex items-center justify-center p-2 mb-2">
                     <div id="modalAvatarSvg" class="w-full h-full flex items-center justify-center"></div>
                 </div>
-                <h3 id="modalTitle" class="text-base font-bold text-stone-800 text-center mb-1">캐릭터 이름</h3>
-                <p id="modalMsg" class="text-xs text-center text-stone-500 font-medium mb-4">설명 메시지</p>
+                <h3 id="modalTitle" class="text-sm font-bold text-stone-800 text-center mb-1">캐릭터 이름</h3>
+                <p id="modalMsg" class="text-[11px] text-center text-stone-500 font-medium mb-3">설명 메시지</p>
                 <button onclick="closeModal()" 
-                    class="w-full py-2.5 bg-themeRed hover:bg-[#B53E2E] text-white font-black text-xs rounded-xl shadow border-b-2 border-[#9A3022]">
+                    class="w-full py-2 bg-themeRed hover:bg-[#B53E2E] text-white font-black text-xs rounded-xl shadow border-b-2 border-[#9A3022]">
                     확인 및 도감에 저장
                 </button>
             </div>
@@ -395,7 +400,7 @@
         };
 
         window.initApp = function() {
-            const saved = localStorage.getItem('tan_bday_scrapbook_v6');
+            const saved = localStorage.getItem('tan_bday_scrapbook_v8');
             if (saved) { try { state = JSON.parse(saved); } catch (e) {} }
             renderUI();
 
@@ -412,7 +417,7 @@
         }
 
         window.saveApp = function() {
-            localStorage.setItem('tan_bday_scrapbook_v6', JSON.stringify(state));
+            localStorage.setItem('tan_bday_scrapbook_v8', JSON.stringify(state));
             renderUI();
         }
 
@@ -433,7 +438,7 @@
             const colors = [{ t: '#C94A38', b: '#E8A598' }, { t: '#87CEEB', b: '#F4EFE6' }, { t: '#E8A598', b: '#87CEEB' }, { t: '#F4EFE6', b: '#C94A38' }];
             for (let i = 0; i < 9; i++) {
                 const c = colors[i % colors.length];
-                chamber.insertAdjacentHTML('beforeend', `<div class="w-7 h-7 rounded-full shadow-2xs border border-white flex flex-col overflow-hidden"><div class="w-full h-1/2" style="background-color: ${c.t};"></div><div class="w-full h-1/2" style="background-color: ${c.b};"></div></div>`);
+                chamber.insertAdjacentHTML('beforeend', `<div class="w-6 h-6 rounded-full shadow-2xs border border-white flex flex-col overflow-hidden"><div class="w-full h-1/2" style="background-color: ${c.t};"></div><div class="w-full h-1/2" style="background-color: ${c.b};"></div></div>`);
             }
         }
 
@@ -461,8 +466,8 @@
                         <span class="text-[8px] font-black px-1.5 rounded-full text-white ${r.badgeColor}">
                             ${r.grade}
                         </span>
-                        <div class="w-8 h-8 my-1 flex items-center justify-center">
-                            ${isHave ? r.svg : `<div class="w-7 h-7 rounded-full bg-stone-200 flex items-center justify-center text-[10px] text-stone-500 font-bold">?</div>`}
+                        <div class="w-7 h-7 my-1 flex items-center justify-center">
+                            ${isHave ? r.svg : `<div class="w-6 h-6 rounded-full bg-stone-200 flex items-center justify-center text-[9px] text-stone-500 font-bold">?</div>`}
                         </div>
                         <span class="text-[8px] font-bold text-stone-700 truncate w-full text-center">
                             ${isHave ? r.name : '알 수 없음'}
